@@ -1,0 +1,39 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(to right, #ffa36c, #ffd571);
+}
+
+section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+form {
+  width: 50% !important;
+}
+
+figcaption {
+  font-family: 'Lobster', cursive;
+}
+
+img {
+  width: 30%;
+  border-radius: 3px;
+}
+
+li {
+  transition: all 0.3s;
+  margin-bottom: 2px;
+}
+
+li:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.disabled {
+  background-color: #eee !important;
+}

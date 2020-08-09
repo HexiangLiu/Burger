@@ -1,0 +1,41 @@
+<section>
+    <figure>
+        <img src="assets/image/burger.jpg" class="mb-2" alt="burger">
+        <figcaption class="h3 text-danger">Eat the burger!</figcaption>
+    </figure>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <ul class="list-group">
+                    {{#each burgers }}
+                    {{#unless devoured}}
+                    <li class="list-group-item">{{id}}. {{burger_name}} <button class="btn_devour btn btn-danger ml-2"
+                            data-id={{id}}>Devour it!!</button>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-6">
+                <ul class="list-group">
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li class="list-group-item disabled">{{id}}. {{burger_name}}</li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <form action="/api/burgers" method="POST" class="mt-5 mx-auto">
+                <div class="input-group">
+                    <input type="text" class=" form-control" name='burger_name'
+                        placeholder="The burger you want to eat so bad">
+                    <div class="input-group-append">
+                        <button class="btn btn-warning" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
